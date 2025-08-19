@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eugene Blogs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        .neon-container {
+            position: relative;
+            text-align: center;
+        }
+        
+        .neon-text {
+            font-size: 8vw;
+            color: #fff;
+            text-shadow: 
+                0 0 5px #fff,
+                0 0 10px #fff,
+                0 0 15px #fff,
+                0 0 20px #ff00ff,
+                0 0 35px #ff00ff,
+                0 0 40px #ff00ff,
+                0 0 50px #ff00ff,
+                0 0 75px #ff00ff;
+            animation: pulsate 1.5s infinite alternate;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: appear 2s forwards 0.5s, pulsate 1.5s infinite alternate 2.5s;
+        }
+        
+        .underline {
+            height: 4px;
+            width: 0;
+            background: #fff;
+            box-shadow: 
+                0 0 5px #fff,
+                0 0 10px #fff,
+                0 0 15px #fff,
+                0 0 20px #ff00ff,
+                0 0 35px #ff00ff,
+                0 0 40px #ff00ff;
+            margin: 10px auto;
+            border-radius: 2px;
+            animation: expand 1.5s forwards 2s;
+        }
+        
+        /* Мерцание отдельных букв */
+        .flicker-slow {
+            animation: flicker 3s linear infinite;
+        }
+        
+        .flicker-fast {
+            animation: flicker 1s linear infinite;
+        }
+        
+        @keyframes appear {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes expand {
+            to {
+                width: 100%;
+            }
+        }
+        
+        @keyframes pulsate {
+            100% {
+                text-shadow: 
+                    0 0 5px #fff,
+                    0 0 10px #fff,
+                    0 0 15px #fff,
+                    0 0 20px #ff00ff,
+                    0 0 35px #ff00ff,
+                    0 0 40px #ff00ff,
+                    0 0 50px #ff00ff,
+                    0 0 75px #ff00ff;
+            }
+            0% {
+                text-shadow: 
+                    0 0 2px #fff,
+                    0 0 5px #fff,
+                    0 0 8px #fff,
+                    0 0 12px #ff00ff,
+                    0 0 20px #ff00ff,
+                    0 0 25px #ff00ff,
+                    0 0 30px #ff00ff,
+                    0 0 45px #ff00ff;
+            }
+        }
+        
+        @keyframes flicker {
+            0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+                opacity: 1;
+            }
+            20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+                opacity: 0.3;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="neon-container">
+        <div class="neon-text">
+            <span class="flicker-slow">E</span>ug<span class="flicker-fast">e</span>n<span class="flicker-slow">e</span> Bl<span class="flicker-fast">o</span>g<span class="flicker-slow">s</span>
+        </div>
+        <div class="underline"></div>
+    </div>
+</body>
+</html>
